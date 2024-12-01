@@ -64,12 +64,12 @@ void kmp_implement(string text, string pattern)
 			pattern_index++;
 			text_index++;
 		}
-		if ( pattern_index == patternLength) {
+		if (pattern_index == patternLength) {
 			cout << "Found pattern at index " << text_index - pattern_index << "\n";
 			pattern_index = lps[pattern_index - 1];
 		}
 		// mismatch after j matches
-		else if ( text_index < textLength && pattern[pattern_index] != text[text_index]) {
+		else if (text_index < textLength && pattern[pattern_index] != text[text_index]) {
 			// Do not match lps[0..lps[j-1]] characters,
             // they will match anyway
             if (pattern_index != 0) pattern_index = lps[pattern_index - 1];
